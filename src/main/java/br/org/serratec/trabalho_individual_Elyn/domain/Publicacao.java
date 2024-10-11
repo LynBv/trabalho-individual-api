@@ -2,8 +2,15 @@ package br.org.serratec.trabalho_individual_Elyn.domain;
 
 import java.time.LocalDate;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Embeddable;
+import jakarta.validation.constraints.NotBlank;
+
+@Embeddable
 public class Publicacao {
 
+    @NotBlank(message="Campo precisa estar preenchido!")
+    @Column(nullable=false)
     private String autor;
 
     private LocalDate dataPublicacao;
